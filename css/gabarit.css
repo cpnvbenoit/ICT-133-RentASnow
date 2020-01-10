@@ -1,0 +1,16 @@
+a {
+    all: unset;
+}
+.nav-btn{
+    width: 75px;
+    height: 30px;
+    vertical-align: center;
+    text-align: center;
+    background-color: #4DB9EE;
+    color: white;
+    transition: 0.25s;
+}
+.nav-btn:hover{
+    background-color: black;
+    text-decoration: underline;
+}

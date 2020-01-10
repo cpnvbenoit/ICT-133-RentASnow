@@ -17,6 +17,7 @@
 
     <link href="assets/carousel/style.css" rel="stylesheet" type="text/css"/>
     <link href="assets/camera/css/camera.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../css/gabarit.css">
 
     <link href="http://fonts.googleapis.com/css?family=Syncopate" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css">
@@ -44,7 +45,21 @@
                     <a href="index.php" id="divSiteTitle">Rent A Snow</a><br/>
                     <a href="index.php" id="divTagLine">La glisse à moindre coût</a>
                 </div>
+                <div id="divLogo" class="pull-right">
+
+                </div>
                 <div id="divMenuRight" class="pull-right">
+                    <table>
+                        <tr>
+                            <td class="nav-btn">
+                                <a href="index.php?action=home">Home</a>
+                            </td>
+                            <td width="105px"></td>
+                            <td class="nav-btn">
+                                <a href="index.php?action=displaySnows">Snows</a>
+                            </td>
+                        </tr>
+                    </table>
                     <div class="navbar">
                         <button type="button" class="btn btn-navbar-highlight btn-large btn-primary" data-toggle="collapse" data-target=".nav-collapse">
                             NAVIGATION <span class="icon-chevron-down icon-white"></span>
@@ -52,8 +67,8 @@
                         <div class="nav-collapse collapse">
                             <ul class="nav nav-pills ddmenu">
                                 <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
-                                <li><a href="index.php?action=home">Home</a></li>
-                                <li><a href="index.php?action=displaySnows">Snows</a></li>
+
+
                             </ul>
                         </div>
                     </div>
