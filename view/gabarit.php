@@ -31,6 +31,7 @@
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
+
 </head>
 <body id="pageBody">
 
@@ -48,30 +49,31 @@
                 <div id="divLogo" class="pull-right">
 
                 </div>
-                <div id="divMenuRight" class="pull-right">
-                    <table>
+                <div id="divMenuRight" class="divMenuRight pull-right">
+                    <table style="margin-left: 45px">
+                        <tr><td height="25px"></td></tr>
                         <tr>
-                            <td class="nav-btn">
-                                <a href="index.php?action=home">Home</a>
-                            </td>
-                            <td width="105px"></td>
-                            <td class="nav-btn">
-                                <a href="index.php?action=displaySnows">Snows</a>
-                            </td>
+                            <td width="45px"></td>
+                            <td class="nav-btn"><a href="index.php?action=home">Home</a></td>
+                            <td width="15px"></td>
+                            <td class="nav-btn"><a href="index.php?action=displaySnows">Snows</a></td>
+                            <td width="20px"></td>
+                            <td id="connect"><a style="color: #4DB9EE" href="index.php?action=connect">Connexion</a></td>
+                            <td id="disconnect" class="d-none"><a style="color: #4DB9EE" href="index.php?action=disconnect">Déconnexion</a></td>
                         </tr>
                     </table>
-                    <div class="navbar">
+                    <!--<div class="navbar">
                         <button type="button" class="btn btn-navbar-highlight btn-large btn-primary" data-toggle="collapse" data-target=".nav-collapse">
                             NAVIGATION <span class="icon-chevron-down icon-white"></span>
                         </button>
-                        <div class="nav-collapse collapse">
+                       <div class="nav-collapse collapse">
                             <ul class="nav nav-pills ddmenu">
-                                <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
+                                 On commence par afficher les boutons qui s'afficheront, peu importe les événements
 
 
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

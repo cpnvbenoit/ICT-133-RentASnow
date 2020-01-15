@@ -13,4 +13,12 @@ function displaySnows()
 
     require_once 'view/displaySnows.php';
 }
+function connect()
+{
+    require_once 'view/connect.php';
+}
+function disconnect()
+{
+    require_once 'view/disconnect.php';
+}
 ?>

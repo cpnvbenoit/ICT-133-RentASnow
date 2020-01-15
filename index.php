@@ -10,6 +10,12 @@ switch($action){
     case 'displaySnows':
         displaySnows();
         break;
+    case 'connect':
+        connect();
+        break;
+    case 'disconnect':
+        disconnect();
+        break;
     default:
         require_once "view/home.php";
         break;
