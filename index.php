@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require "controler/controler.php";
 $action=$_GET['action'];
 
@@ -15,6 +15,9 @@ $action=$_GET['action'];
             break;
         case 'disconnect':
             disconnect();
+            break;
+        case '' :
+            home();
             break;
         default:
             require_once "view/pagenotfound.php";

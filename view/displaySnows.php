@@ -33,10 +33,10 @@ $title = "RentASnow - Snows";
 <?php foreach ($snows as $onepieceofsnow) { ?>
     <hr>
     <div class="case_snow">
-        <img src="view/images/Snows/<?= $onepieceofsnow['bigimage'] ?>" alt="">
+        <img src="view/images/Snows/<?= $onepieceofsnow['smallimage'] ?>" alt="">
         <h2>Marque : <?= $onepieceofsnow['marque'] ?></h2>
         <h2>Model : <?= $onepieceofsnow['modele'] ?></h2>
-        <h2>Diponibilité : <?=$dispo=$onepieceofsnow['disponible']; if($dispo==true){echo"Disponible";}else{echo"Indisponible";}?></h2>
+        <h2>Diponibilité : <?php $dispo=$onepieceofsnow['disponible']; if($dispo==true){echo"Disponible";}else{echo"Indisponible";}?></h2>
     </div>
 <?php } ?>
 
