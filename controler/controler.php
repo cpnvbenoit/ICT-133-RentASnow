@@ -10,7 +10,7 @@ function home()
 }
 function displaySnows()
 {
-
+    $snows = getSnows();
     require_once 'view/displaySnows.php';
 }
 function connect()

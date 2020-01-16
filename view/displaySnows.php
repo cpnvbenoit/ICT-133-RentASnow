@@ -18,8 +18,27 @@ $title = "RentASnow - Snows";
         <br style="clear:both"/>
     </div>
 </div>
-
-
+<!--
+   {
+	"id" : "1".
+    "modele": "B101",
+    "marque": "Burton",
+    "bigimage": "B101.jpg",
+    "smallimage": "B101_small.jpg",
+    "dateretour": "",
+    "disponible": true
+  },
+ -->
+<h1>Nos Snowboards :</h1>
+<?php foreach ($snows as $onepieceofsnow) { ?>
+    <hr>
+    <div class="case_snow">
+        <img src="view/images/Snows/<?= $onepieceofsnow['bigimage'] ?>" alt="">
+        <h2>Marque : <?= $onepieceofsnow['marque'] ?></h2>
+        <h2>Model : <?= $onepieceofsnow['modele'] ?></h2>
+        <h2>Diponibilité : <?=$dispo=$onepieceofsnow['disponible']; if($dispo==true){echo"Disponible";}else{echo"Indisponible";}?></h2>
+    </div>
+<?php } ?>
 
 <script src="assets/carousel/jquery.carouFredSel-6.2.0-packed.js" type="text/javascript"></script>
 <script src="assets/camera/scripts/camera.min.js" type="text/javascript"></script>
