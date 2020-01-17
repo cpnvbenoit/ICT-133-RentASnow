@@ -58,8 +58,15 @@
                             <td width="15px"></td>
                             <td class="nav-btn"><a href="index.php?action=displaySnows">Snows</a></td>
                             <td width="20px"></td>
-                            <td id="connect"><a style="color: #4DB9EE" href="index.php?action=connect">Connexion</a></td>
-                            <td id="disconnect" class="d-none"><a style="color: #4DB9EE" href="index.php?action=disconnect">Déconnexion</a></td>
+                            <?php
+                                if ($_SESSION['username']!=""){
+                                    echo "<td id=\"disconnect\" class=\"d-none\"><a style=\"color: #4DB9EE\" href=\"index.php?action=disconnect\">Déconnexion</a></td>";
+                                }else{
+                                   echo "<td id=\"connect\"><a style=\"color: #4DB9EE\" href=\"index.php?action=connect\">Connexion</a></td>";
+                                }
+                            ?>
+
+
                         </tr>
                     </table>
                     <!--<div class="navbar">

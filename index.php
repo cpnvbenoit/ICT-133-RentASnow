@@ -16,6 +16,9 @@ $action=$_GET['action'];
         case 'disconnect':
             disconnect();
             break;
+        case 'tryLogin':
+            tryLogin();
+            break;
         case '' :
             home();
             break;
