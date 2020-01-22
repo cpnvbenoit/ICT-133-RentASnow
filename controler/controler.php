@@ -41,4 +41,8 @@ function tryLogin()
 
 
 }
+function displaySnowsPlus(){
+    $snows = getSnows();
+    require_once 'view/displaySnowsPlus.php';
+}
 ?>

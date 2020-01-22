@@ -19,6 +19,8 @@ $action=$_GET['action'];
         case 'tryLogin':
             tryLogin();
             break;
+        case 'displaySnowsPlus';
+            displaySnowsPlus();
         case '' :
             home();
             break;

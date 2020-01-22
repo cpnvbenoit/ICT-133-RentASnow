@@ -2,7 +2,6 @@
 ob_start();
 $title = "RentASnow - Accueil";
 ?>
-
 <!-- ________ SLIDER_____________-->
 <div class="row-fluid">
     <div class="camera_full_width">
@@ -29,6 +28,7 @@ $title = "RentASnow - Accueil";
         </div>
         <div class="row ml-5"><?= $onepieceofnews['details'] ?></div>
     <?php } ?>
+
 </div>
 
 
