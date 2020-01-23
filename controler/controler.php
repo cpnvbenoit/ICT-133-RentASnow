@@ -48,4 +48,8 @@ function displaySnowsPlus(){
     $snows = getSnows();
     require_once 'view/displaySnowsPlus.php';
 }
+function modifyfile()
+{
+    require_once 'view/modifyflie.php';
+}
 ?>
