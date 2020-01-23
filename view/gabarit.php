@@ -60,7 +60,7 @@
                             <td width="20px"></td>
                             <?php
                                 if ($_SESSION['username']!=""){
-                                    echo "<td id=\"disconnect\" class=\"d-none\"><a style=\"color: #4DB9EE\" href=\"index.php?action=disconnect\">Déconnexion</a></td>";
+                                    echo "<td id=\"disconnect\" ><a style=\"color: #4DB9EE\" href=\"index.php?action=disconnect\">Déconnexion</a></td>";
                                 }else{
                                    echo "<td id=\"connect\"><a style=\"color: #4DB9EE\" href=\"index.php?action=connect\">Connexion</a></td>";
                                 }

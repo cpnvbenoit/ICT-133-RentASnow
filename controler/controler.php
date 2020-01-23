@@ -19,24 +19,27 @@ function connect()
 }
 function disconnect()
 {
-    require_once 'view/disconnect.php';
+    unset($_SESSION);
+    require_once 'view/home.php';
 }
 function tryLogin()
 {
     $news = getNews();
     $users=getUsers();
-    $username=$_POST['email'];
+    $username=$_POST['username'];
     $password=$_POST['password'];
     foreach ($users as $user){
-        if (($username==$user['username'])&&$password==$user['password']){
-            $_SESSION['fail']=false;
-            $_SESSION['email']=$username;
-            $_SESSION['password']=$password;
-            require_once 'view/home.php';
-        }else{
-            $_SESSION['fail']=true;
-            require_once 'view/connect.php';
+        if (($username==$user['username'])&&($password==$user['password'])){
+
+            $_SESSION['username']=$username;
         }
+    }
+    if (isset($_SESSION['username'])==false){
+        $_SESSION['fail']=true;
+        require_once 'view/connect.php';
+    }else{
+        $_SESSION['fail']=false;
+        require_once 'view/home.php';
     }
 
 

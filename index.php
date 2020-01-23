@@ -3,6 +3,7 @@ session_start();
 require "controler/controler.php";
 $action=$_GET['action'];
 
+
     switch ($action) {
         case 'home';
             home();
@@ -21,6 +22,7 @@ $action=$_GET['action'];
             break;
         case 'displaySnowsPlus';
             displaySnowsPlus();
+            break;
         case '' :
             home();
             break;
@@ -28,7 +30,7 @@ $action=$_GET['action'];
             require_once "view/pagenotfound.php";
             break;
     }
-
+var_dump($_SESSION);
 ?>
 <!--
  $tab = json_decode(file_get_contents('Snows.json'), true);
