@@ -1,4 +1,11 @@
 <?php
+/**
+ * Created By PhpStorm
+ * User: benoit.pierrehumbert
+ * Date: 24.01.2020
+ * Time: 16:55
+ */
+
 require_once 'model/model.php';
 
 // This file contains nothing but functions
@@ -50,6 +57,33 @@ function displaySnowsPlus(){
 }
 function modifyfile()
 {
+    $tab=getUsers();
     require_once 'view/modifyflie.php';
+}
+/*
+$tab = json_decode(file_get_contents('Snows.json'), true);
+var_dump($tab);
+$tab[3]['modele'] = 'New K067'; // update
+unset($tab[7]); // delete
+$tab[] = ["id" => 11, "modele" => "Carrel", "marque" => "CPNV", "bigimage" => "B101.jpg", "smallimage" => "B101_small.jpg", "dateretour" => "", "disponible" => true];
+file_put_contents('Snows.json', json_encode($tab));
+
+
+*/
+function changeUser()
+{
+    $id=$_GET['id'];
+    $modify = getUsers();
+    $modify[$id-1]['username'] = $_POST['newusername']; // update
+    putUsers($modify);
+    $tab = getUsers();
+    require_once 'view/modifyflie.php';
+}
+function delete(){
+    $id=$_GET['id'];
+    $modify = getUsers();
+    unset($modify[$id-1]);
+    putUsers($modify);
+    require_once 'view/userdeleted.php';
 }
 ?>

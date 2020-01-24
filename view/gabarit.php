@@ -1,4 +1,10 @@
 ﻿<!DOCTYPE HTML>
+<!--
+* Created By PhpStorm
+* User: benoit.pierrehumbert
+* Date: 24.01.2020
+* Time: 16:55
+*-->
 <html>
 <head>
     <meta charset="utf-8">
@@ -72,18 +78,6 @@
 
                         </tr>
                     </table>
-                    <!--<div class="navbar">
-                        <button type="button" class="btn btn-navbar-highlight btn-large btn-primary" data-toggle="collapse" data-target=".nav-collapse">
-                            NAVIGATION <span class="icon-chevron-down icon-white"></span>
-                        </button>
-                       <div class="nav-collapse collapse">
-                            <ul class="nav nav-pills ddmenu">
-                                 On commence par afficher les boutons qui s'afficheront, peu importe les événements
-
-
-                            </ul>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
