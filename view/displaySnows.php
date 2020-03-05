@@ -28,7 +28,7 @@ $title = "RentASnow - Snows";
         <img src="view/images/Snows/<?= $onepieceofsnow['smallimage'] ?>" alt="">
         <h2>Marque : <?= $onepieceofsnow['marque'] ?></h2>
         <h2>Model : <?= $onepieceofsnow['modele'] ?></h2>
-        <a href="index.php?action=displaySnowsPlus&id=<?= $onepieceofsnow['id']?>" style="text-decoration: underline;color: #4DB9EE">Voir Plus</a>
+        <a href="index.php?action=displaySnowsPlus&id=<?= $onepieceofsnow['id']?>" style="cursor: crosshair;text-decoration: underline;color: #4DB9EE">Voir Plus</a>
     </div>
     <hr>
 <?php } ?>
