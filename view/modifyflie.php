@@ -27,7 +27,7 @@ $title = "RentASnow - Edit File";
             ?>
 
             <tr>
-                <td><?= $element['username'] ?></td>
+                <td><?= $element['email'] ?></td>
                 <td><?= $element['id'] ?></td>
                 <td><a href="index.php?action=delete&id=<?= $element['id'] ?>">
                         <button type="submit" class="btn btn-danger">Suppr</button>

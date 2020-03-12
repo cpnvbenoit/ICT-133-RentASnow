@@ -8,5 +8,5 @@
 $user='PHPAPP';
 $pass='Pa$$w0rd';
 $dbhost='localhost';
-$dbname='snow';
+$dbname='snows';
 ?>

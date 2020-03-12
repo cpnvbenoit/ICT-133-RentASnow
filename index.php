@@ -6,6 +6,7 @@
  * Time: 16:55
  */
 session_start();
+$cmd="mysql -u $user -p$pass ";
 require "controler/controler.php";
 $action=$_GET['action'];
 if (isset($_GET['newusername'])){

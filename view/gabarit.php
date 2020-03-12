@@ -66,7 +66,7 @@
                             <td width="20px"></td>
 
                             <?php
-                                if ($_SESSION['username']!=""){
+                                if (isset($_SESSION['username'])){
                                     echo "<td class=\"nav-btn\"><a href=\"index.php?action=modifyflie\">Edit File</a></td>";
                                     echo "<td width=\"20px\"></td>";
                                     echo "<td id=\"disconnect\" ><a style=\"color: #4DB9EE\" href=\"index.php?action=disconnect\">Déconnexion</a></td>";

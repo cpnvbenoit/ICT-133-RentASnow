@@ -22,6 +22,9 @@ function displaySnows()
 }
 function connect()
 {
+    unset($_SESSION['username']);
+    unset($_SESSION['password']);
+    $_SESSION['fail']=4;
     require_once 'view/connect.php';
 }
 function disconnect()
@@ -31,12 +34,12 @@ function disconnect()
 }
 function tryLogin()
 {
-    $news = getNews();
     $users=getUsers();
+    var_dump($users);
     $username=$_POST['username'];
     $password=$_POST['password'];
     foreach ($users as $user){
-        if (($username==$user['username'])&&($password==$user['password'])){
+        if (($username==$user['email'])&&($password==$user['password'])){
 
             $_SESSION['username']=$username;
         }

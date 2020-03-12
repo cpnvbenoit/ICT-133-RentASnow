@@ -12,8 +12,9 @@ $title = "RentASnow - Connect";
 
 <div style="margin-top: 100px">
     <?php
-    if ($_SESSION['fail']==true){
+    if (($_SESSION['fail']!=false)&&($_SESSION['fail']!=4)){
         echo "<h4 class=\"text-danger\" >Votre identifiant ou votre mot de passe est incorrect !</h4>";
+
         echo "<h1>nom utili</h1>".$_SESSION['username']."  fin";
         echo "<h1>mdp</h1>".$_SESSION['password']."  fin";
     }
