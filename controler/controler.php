@@ -34,12 +34,14 @@ function disconnect()
 }
 function tryLogin()
 {
+    /*email : elit@Aenean.net
+     * password: Holly
+     * */
     $users=getUsers();
-    var_dump($users);
     $username=$_POST['username'];
     $password=$_POST['password'];
     foreach ($users as $user){
-        if (($username==$user['email'])&&($password==$user['password'])){
+        if (($username==$user['email'])&&(password_verify($password,$user['password']))){
 
             $_SESSION['username']=$username;
         }
@@ -63,16 +65,6 @@ function modifyfile()
     $tab=getUsers();
     require_once 'view/modifyflie.php';
 }
-/*
-$tab = json_decode(file_get_contents('Snows.json'), true);
-var_dump($tab);
-$tab[3]['modele'] = 'New K067'; // update
-unset($tab[7]); // delete
-$tab[] = ["id" => 11, "modele" => "Carrel", "marque" => "CPNV", "bigimage" => "B101.jpg", "smallimage" => "B101_small.jpg", "dateretour" => "", "disponible" => true];
-file_put_contents('Snows.json', json_encode($tab));
-
-
-*/
 function changeUser()
 {
     $id=$_GET['id'];
@@ -88,5 +80,9 @@ function delete(){
     unset($modify[$id-1]);
     putUsers($modify);
     require_once 'view/userdeleted.php';
+}
+function updatePass(){
+    updatePassword();
+    require_once 'view/connect.php';
 }
 ?>

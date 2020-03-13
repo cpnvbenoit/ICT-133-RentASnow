@@ -64,6 +64,8 @@
                             <td width="15px"></td>
                             <td class="nav-btn"><a href="index.php?action=displaySnows">Snows</a></td>
                             <td width="20px"></td>
+                            <td class="nav-btn"><a href="index.php?action=updatePass">UpdatePass</a></td>
+                            <td width="20px"></td>
 
                             <?php
                                 if (isset($_SESSION['username'])){
@@ -74,6 +76,8 @@
                                    echo "<td id=\"connect\"><a style=\"color: #4DB9EE\" href=\"index.php?action=connect\">Connexion</a></td>";
                                 }
                             ?>
+
+
 
 
                         </tr>

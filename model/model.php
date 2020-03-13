@@ -5,6 +5,8 @@
  * Date: 24.01.2020
  * Time: 16:55
  */
+
+//$cmd="mysql -u $user -p$pass ";
 function getPDO()
 {
     require ".const.php";
@@ -13,7 +15,8 @@ function getPDO()
 }
 function getNews()
 {
-    return json_decode(file_get_contents("model/dataStorage/news.json"),true);
+    //return json_decode(file_get_contents("model/dataStorage/news.json"),true);
+    return getNewsDB();
 }
 function getSnows()
 {
@@ -45,13 +48,9 @@ function getUsersDB()
         print "Error!: " . $e->getMessage() . "<br/>";
         return null;
     }
-}
+}//get Users from the snows Database
 function getSnowsDB()
 {
-/*SELECT *
-FROM table1
-LEFT JOIN table2 ON table1.id = table2.fk_id
-*/
     try {
         $dbh = getPDO();
         $query = 'SELECT * FROM snows 
@@ -66,13 +65,44 @@ LEFT JOIN table2 ON table1.id = table2.fk_id
         print "Error!: " . $e->getMessage() . "<br/>";
         return null;
     }
+}//get Snows with snowstypes
+function update($password,$id){
+
+    try {
+        $dbh = getPDO();
+        $query = 'UPDATE users
+                  SET password=:password
+                  WHERE users.id=:id';
+        $statement = $dbh->prepare($query);//prepare query
+        $statement->execute(array(':password' => $password, ':id' => $id));//execute query
+        $queryResult = $statement->fetchAll();//prepare result for client
+        $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+
+}
+function updatePassword(){
+    $users = getUsers();
+    foreach ($users as $user)
+    {
+        $hash = password_hash($user['firstname'],PASSWORD_DEFAULT);
+        // echo $user['firstname']." => $hash \n";
+        // TODO Ecrire le code pour mettre à jour le mot de passe dans la base de données avec $hash
+        update($hash,$user['id']);
+    }
+
 }
 function getNewsDB()
 {
 
     try {
         $dbh = getPDO();
-        $query = 'SELECT * FROM filmmakers';
+        $query = 'SELECT * FROM news 
+                  INNER join users 
+                  on news.user_id = users.id';
         $statement = $dbh->prepare($query);//prepare query
         $statement->execute();//execute query
         $queryResult = $statement->fetchAll();//prepare result for client

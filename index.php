@@ -6,7 +6,6 @@
  * Time: 16:55
  */
 session_start();
-$cmd="mysql -u $user -p$pass ";
 require "controler/controler.php";
 $action=$_GET['action'];
 if (isset($_GET['newusername'])){
@@ -16,6 +15,9 @@ if (isset($_GET['newusername'])){
     switch ($action) {
         case 'home';
             home();
+            break;
+        case 'updatePass';
+            updatePass();
             break;
         case 'displaySnows':
             displaySnows();
