@@ -21,16 +21,17 @@ $title = "RentASnow - Snows";
     "disponible": true
   },
  -->
+<br><br><br><br><br><br><br>
+<h1>Nos Snowboards :</h1>
+<?php foreach ($snowstypes as $snowstype) { ?>
 
-<?php foreach ($snows as $onepieceofsnow) { $link=$_GET['link']; ?>
-    <?php if ($onepieceofsnow['id']==1){echo "<h1>Nos Snowboards :</h1>";} ?>
-    <div class="case_snow">
-        <img src="view/images/Snows/<?= $onepieceofsnow['photo'] ?>" alt="">
-        <h2>Marque : <?= $onepieceofsnow['brand'] ?></h2>
-        <h2>Model : <?= $onepieceofsnow['model'] ?></h2>
-        <h2>Longueur : <?= $onepieceofsnow['length'] ?></h2>
-        <h2>Code : <?= $onepieceofsnow['code'] ?></h2>
-        <a href="index.php?action=displaySnowsPlus&id=<?= $onepieceofsnow['id']?>" style="cursor: crosshair;text-decoration: underline;color: #4DB9EE">Voir Plus</a>
+    <div class="case_snow" style="text-align: center">
+        <a href="index.php?action=displaySnowsDetails&id=<?= $snowstype['id'] ?>"
+           style="cursor: pointer;text-decoration: underline;color: #4DB9EE"><span style="font-size: 1.5em">
+        <img src="view/images/Snows/<?= $snowstype['photo'] ?>" style="width: 100px;"
+             alt="<?= $snowstype['model'] ?>"><br>
+        <?= $snowstype['model'], $snowstype['brand'] ?></span>
+        </a>
     </div>
     <hr>
 <?php } ?>

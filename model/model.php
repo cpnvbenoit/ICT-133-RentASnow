@@ -13,27 +13,12 @@ function getPDO()
     $res = new PDO('mysql:host=' . $dbhost . ';dbname=' . $dbname, $user, $pass);
     return $res;
 }
-function getNews()
-{
-    //return json_decode(file_get_contents("model/dataStorage/news.json"),true);
-    return getNewsDB();
-}
-function getSnows()
-{
-    //return json_decode(file_get_contents("model/dataStorage/snows.json"),true);
-    return getSnowsDB();
-}
-function getUsers()
-{
-    return getUsersDB();
-    //return json_decode(file_get_contents("model/dataStorage/users.json"),true);
-}
 function putUsers($tab)
 {
 
     file_put_contents('model/dataStorage/users.json', json_encode($tab));
 }
-function getUsersDB()
+function getUsers()
 {
 
     try {
@@ -49,12 +34,12 @@ function getUsersDB()
         return null;
     }
 }//get Users from the snows Database
-function getSnowsDB()
+function getSnows()
 {
     try {
         $dbh = getPDO();
         $query = 'SELECT * FROM snows 
-                  left join snowtypes
+                  INNER join snowtypes
                   on snows.snowtype_id = snowtypes.id';
         $statement = $dbh->prepare($query);//prepare query
         $statement->execute();//execute query
@@ -66,6 +51,21 @@ function getSnowsDB()
         return null;
     }
 }//get Snows with snowstypes
+function getSnowstypes()
+{
+    try {
+        $dbh = getPDO();
+        $query = 'SELECT * FROM snowtypes';
+        $statement = $dbh->prepare($query);//prepare query
+        $statement->execute();//execute query
+        $queryResult = $statement->fetchAll();//prepare result for client
+        $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}//get snowstypes
 function update($password,$id){
 
     try {
@@ -95,7 +95,7 @@ function updatePassword(){
     }
 
 }
-function getNewsDB()
+function getNews()
 {
 
     try {

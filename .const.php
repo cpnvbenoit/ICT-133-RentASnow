@@ -7,6 +7,8 @@
  */
 $user='PHPAPP';
 $pass='Pa$$w0rd';
-$dbhost='localhost';
+$dbhost='127.0.0.1';
 $dbname='snows';
+
+$debug=true;
 ?>

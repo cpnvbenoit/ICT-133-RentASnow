@@ -17,7 +17,7 @@ function home()
 }
 function displaySnows()
 {
-    $snows = getSnows();
+    $snowstypes = getSnowstypes();
     require_once 'view/displaySnows.php';
 }
 function connect()
@@ -56,9 +56,9 @@ function tryLogin()
 
 
 }
-function displaySnowsPlus(){
+function displaySnowsDetails(){
     $snows = getSnows();
-    require_once 'view/displaySnowsPlus.php';
+    require_once 'view/displaySnowsDetails.php';
 }
 function modifyfile()
 {

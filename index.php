@@ -31,8 +31,8 @@ if (isset($_GET['newusername'])){
         case 'tryLogin':
             tryLogin();
             break;
-        case 'displaySnowsPlus';
-            displaySnowsPlus();
+        case 'displaySnowsDetails';
+            displaySnowsDetails();
             break;
         case 'modifyflie';
             modifyfile();
