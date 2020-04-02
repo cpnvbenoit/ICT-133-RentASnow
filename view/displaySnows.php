@@ -25,8 +25,8 @@ $title = "RentASnow - Snows";
 <h1>Nos Snowboards :</h1>
 <?php foreach ($snowstypes as $snowstype) { ?>
 
-    <div class="case_snow" style="text-align: center">
-        <a href="index.php?action=displaySnowsDetails&id=<?= $snowstype['id'] ?>"
+    <div class="case_snow col-4" style="text-align: center">
+        <a href="index.php?action=displaySnowsTypes&id=<?= $snowstype['id'] ?>"
            style="cursor: pointer;text-decoration: underline;color: #4DB9EE"><span style="font-size: 1.5em">
         <img src="view/images/Snows/<?= $snowstype['photo'] ?>" style="width: 100px;"
              alt="<?= $snowstype['model'] ?>"><br>
@@ -34,6 +34,7 @@ $title = "RentASnow - Snows";
         </a>
     </div>
     <hr>
+
 <?php } ?>
 
 

@@ -23,11 +23,12 @@ $title = "RentASnow - Accueil";
     <h1>Les news </h1>
     <?php foreach ($news as $onepieceofnews) { ?>
         <div class="row mt-4">
-            <div class="col-2"><?= date('d.M.Y', strtotime($onepieceofnews['date'])) ?></div>
-            <h4 class="col-4"><?= $onepieceofnews['title'] ?></h4><br>
-            <h5 class="col-4"><?= $onepieceofnews['firstname']?></h5>
+            <div class="col-2"><?= date('d.M.Y', strtotime($onepieceofnews['date'])) ?> : <?= $onepieceofnews['firstname']?></div>
+            <h4 class="col-4"><?= $onepieceofnews['title'] ?></h4>
+            <h5 class="col-4"></h5>
         </div>
         <div class="row ml-5"><?= $onepieceofnews['text'] ?></div>
+        <hr>
     <?php } ?>
 
 </div>

@@ -11,6 +11,9 @@ $action=$_GET['action'];
 if (isset($_GET['newusername'])){
     $newusername=$_GET['newusername'];
 }
+if (isset($_GET['id'])){
+    $id=$_GET['id'];
+}
 
     switch ($action) {
         case 'home';
@@ -31,8 +34,14 @@ if (isset($_GET['newusername'])){
         case 'tryLogin':
             tryLogin();
             break;
+        case 'succesLogin':
+            succesLogin();
+            break;
         case 'displaySnowsDetails';
             displaySnowsDetails();
+            break;
+        case 'displaySnowsTypes';
+            displaySnowsTypes($id);
             break;
         case 'modifyflie';
             modifyfile();

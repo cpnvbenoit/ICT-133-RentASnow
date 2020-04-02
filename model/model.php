@@ -51,6 +51,22 @@ function getSnows()
         return null;
     }
 }//get Snows with snowstypes
+function getSnowsType($id)
+{
+    try {
+        $dbh = getPDO();
+        $query = 'SELECT * FROM snows 
+                  WHERE snowtype_id=:id';
+        $statement = $dbh->prepare($query);//prepare query
+        $statement->execute(["id"=>$id]);//execute query
+        $queryResult = $statement->fetchAll();//prepare result for client
+        $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}//get Snows of one type
 function getSnowstypes()
 {
     try {
@@ -66,6 +82,22 @@ function getSnowstypes()
         return null;
     }
 }//get snowstypes
+function getSnowtype($id)
+{
+    try {
+        $dbh = getPDO();
+        $query = 'SELECT * FROM snowtypes
+                  WHERE id=:id';
+        $statement = $dbh->prepare($query);//prepare query
+        $statement->execute(["id"=>$id]);//execute query
+        $queryResult = $statement->fetch();//prepare result for client
+        $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}//get snowtype
 function update($password,$id){
 
     try {

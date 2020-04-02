@@ -16,7 +16,8 @@
     <link href="node_modules/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet">
 
     <!-- Icons -->
-    <link href="assets/icons/general/stylesheets/general_foundicons.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="assets/icons/general/stylesheets/general_foundicons.css" media="screen" rel="stylesheet"
+          type="text/css"/>
     <link href="assets/icons/social/stylesheets/social_foundicons.css" media="screen" rel="stylesheet" type="text/css"/>
 
     <link rel="stylesheet" href="assets/fontawesome/css/font-awesome.min.css">
@@ -33,6 +34,7 @@
     <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
 
     <link href="css/subtlepatterns/custom.css" rel="stylesheet" type="text/css"/>
+    <link href="css/cssinhtml.css" rel="stylesheet" type="text/css"/>
 
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
@@ -43,7 +45,8 @@
 
 <div id="divBoxed" class="container">
 
-    <div class="transparent-bg" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: -1;zoom: 1;"></div>
+    <div class="transparent-bg"
+         style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: -1;zoom: 1;"></div>
 
     <div class="divPanel notop nobottom">
         <div class="row-fluid">
@@ -57,27 +60,28 @@
                 </div>
                 <div id="divMenuRight" class="divMenuRight pull-right">
                     <table style="margin-left: 45px">
-                        <tr><td height="25px"></td></tr>
+                        <tr>
+                            <td height="25px"></td>
+                        </tr>
                         <tr>
                             <td width="45px"></td>
                             <td class="nav-btn"><a href="index.php?action=home">Home</a></td>
                             <td width="15px"></td>
                             <td class="nav-btn"><a href="index.php?action=displaySnows">Snows</a></td>
                             <td width="20px"></td>
-                            <td class="nav-btn"><a href="index.php?action=updatePass">UpdatePass</a></td>
-                            <td width="20px"></td>
 
                             <?php
-                                if (isset($_SESSION['username'])){
-                                    echo "<td class=\"nav-btn\"><a href=\"index.php?action=modifyflie\">Edit File</a></td>";
-                                    echo "<td width=\"20px\"></td>";
-                                    echo "<td id=\"disconnect\" ><a style=\"color: #4DB9EE\" href=\"index.php?action=disconnect\">Déconnexion</a></td>";
-                                }else{
-                                   echo "<td id=\"connect\"><a style=\"color: #4DB9EE\" href=\"index.php?action=connect\">Connexion</a></td>";
-                                }
+                            if (isset($_SESSION['username'])) {
+                                echo "<td class=\"nav-btn\"><a href=\"index.php?action=modifyflie\">Edit File</a></td>";
+                                echo "<td width=\"20px\"></td>";
+                                echo "
+                            <td class=\"nav-btn\"><a href=\"index.php?action=updatePass\">UpdatePass</a></td>
+                            <td width=\"20px\"></td>";
+                                echo "<td id=\"disconnect\" ><a style=\"color: #4DB9EE\" href=\"index.php?action=disconnect\">Déconnexion</a></td>";
+                            } else {
+                                echo "<td id=\"connect\"><a style=\"color: #4DB9EE\" href=\"index.php?action=connect\">Connexion</a></td>";
+                            }
                             ?>
-
-
 
 
                         </tr>
@@ -105,7 +109,8 @@
                 <div class="row">
                     <div class="col-4" id="footerArea1">
                         <h3>Notre magasin</h3>
-                        <p>Nous sommes une équipe de jeunes snowboardeurs qui souhaitons faire découvrir cette discipline à tous les publics.</p>
+                        <p>Nous sommes une équipe de jeunes snowboardeurs qui souhaitons faire découvrir cette
+                            discipline à tous les publics.</p>
                         <p>
                             <a href="#" title="Terms of Use">Terms of Use</a><br/>
                             <a href="#" title="Privacy Policy">Privacy Policy</a><br/>
@@ -116,8 +121,10 @@
 
                     <div class="col-4" id="footerArea3">
                         <h3>Horaires de location</h3>
-                        <p>Les locations peuvent s'effectuer tous les jours de la semaine en haute saison de 07h à 19h et en basse saison, les jours ouvrables de 8h à 18h.<br>
-                            Vous pouvez aussi passer par le site. Pour le retrait et le dépot, vous devrez passer au guichet automatique à l'arrière du magasin</p>
+                        <p>Les locations peuvent s'effectuer tous les jours de la semaine en haute saison de 07h à 19h
+                            et en basse saison, les jours ouvrables de 8h à 18h.<br>
+                            Vous pouvez aussi passer par le site. Pour le retrait et le dépot, vous devrez passer au
+                            guichet automatique à l'arrière du magasin</p>
                     </div>
 
                     <div class="col-4" id="footerArea4">

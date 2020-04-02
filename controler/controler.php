@@ -20,6 +20,16 @@ function displaySnows()
     $snowstypes = getSnowstypes();
     require_once 'view/displaySnows.php';
 }
+function displaySnowsTypes($id)
+{
+    $snowtype=getSnowtype($id);
+    $snows = getSnowsType($id);
+    require_once 'view/displayTypes.php';
+}
+function succesLogin()
+{
+    require_once 'view/succesLogin.php';
+}
 function connect()
 {
     unset($_SESSION['username']);

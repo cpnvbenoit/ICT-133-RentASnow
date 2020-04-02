@@ -7,9 +7,10 @@
  */
 
 ob_start();
-$title = "RentASnow - Snows";
-$compteur=0;
+$title = "RentASnow - Conexion";
+
 ?>
+<script></script>
 
 <?php
 $content = ob_get_clean();
