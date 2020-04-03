@@ -51,6 +51,22 @@ function getSnows()
         return null;
     }
 }//get Snows with snowstypes
+function getSnow($id)
+{
+    try {
+        $dbh = getPDO();
+        $query = 'SELECT * FROM snows 
+                  WHERE id=:id';
+        $statement = $dbh->prepare($query);//prepare query
+        $statement->execute(['id'=>$id]);//execute query
+        $queryResult = $statement->fetch();//prepare result for client
+        $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}//get Snows with snowstypes
 function getSnowsType($id)
 {
     try {

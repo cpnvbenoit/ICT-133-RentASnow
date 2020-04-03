@@ -22,7 +22,7 @@ $title = "RentASnow - Types : ";
         </thead>
         <tbody>
             <?php foreach ($snows as $snow) { ?>
-                <tr>
+                <tr><a href="index.php?action=displaySnowsDetails&id=<?= $snow['id'] ?>">
                     <td>
                        <?= $snow['code'] ?>
                     </td>
@@ -33,8 +33,9 @@ $title = "RentASnow - Types : ";
                         <?= writestatesnow($snow['state']); ?>
                     </td>
                     <td>
-                        <?= writeavaliblesnow($snow['state']); ?>
+                        <?= writeavaliblesnow($snow['avalible']); ?>
                     </td>
+                    </a>
                 </tr>
             <?php } ?>
         </tbody>

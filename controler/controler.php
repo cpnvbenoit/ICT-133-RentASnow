@@ -24,7 +24,7 @@ function displaySnowsTypes($id)
 {
     $snowtype=getSnowtype($id);
     $snows = getSnowsType($id);
-    require_once 'view/displayTypes.php';
+    require_once 'view/displayType.php';
 }
 function succesLogin()
 {
@@ -66,8 +66,8 @@ function tryLogin()
 
 
 }
-function displaySnowsDetails(){
-    $snows = getSnows();
+function displaySnowsDetails($id){
+    $snow = getSnow($id);
     require_once 'view/displaySnowsDetails.php';
 }
 function modifyfile()

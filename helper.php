@@ -29,7 +29,7 @@ switch ($state) {
     case 0:
         return "Disponible";
         break;
-    case 2:
+    case 1:
         return "Indisponible";
         break;
 }
