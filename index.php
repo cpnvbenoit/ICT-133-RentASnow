@@ -14,6 +14,9 @@ if (isset($_GET['newusername'])){
 if (isset($_GET['id'])){
     $id=$_GET['id'];
 }
+if (isset($_GET['img'])){
+    $snowtypeimg=$_GET['img'];
+}
 
     switch ($action) {
         case 'home';
@@ -24,6 +27,9 @@ if (isset($_GET['id'])){
             break;
         case 'displaySnows':
             displaySnows();
+            break;
+        case 'displayMyRent':
+            displayMyRent();
             break;
         case 'connect':
             connect();
@@ -38,7 +44,7 @@ if (isset($_GET['id'])){
             succesLogin();
             break;
         case 'displaySnowsDetails';
-            displaySnowsDetails();
+            displaySnowsDetails($id,$snowtypeimg);
             break;
         case 'displaySnowsTypes';
             displaySnowsTypes($id);

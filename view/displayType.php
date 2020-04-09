@@ -8,7 +8,8 @@
 
 require_once 'helper.php';
 ob_start();
-$title = "RentASnow - Types : ";
+$model=$snowtype['photo'];
+$title = "RentASnow - Types : $model";
 ?>
 <br><br><br><br><br><br><br>
 <div>
@@ -19,10 +20,12 @@ $title = "RentASnow - Types : ";
             <th>Longueur</th>
             <th>Etat</th>
             <th>Disponibilité</th>
+            <th>Louer</th>
         </thead>
         <tbody>
             <?php foreach ($snows as $snow) { ?>
-                <tr><a href="index.php?action=displaySnowsDetails&id=<?= $snow['id'] ?>">
+
+                <tr>
                     <td>
                        <?= $snow['code'] ?>
                     </td>
@@ -33,10 +36,13 @@ $title = "RentASnow - Types : ";
                         <?= writestatesnow($snow['state']); ?>
                     </td>
                     <td>
-                        <?= writeavaliblesnow($snow['avalible']); ?>
+                        <?php if ($snow['state']!=4){echo writeavaliblesnow($snow['avalible']);}else {echo "Indisponible";} ?>
                     </td>
-                    </a>
+                    <?php if ($snow['state']!=4){ ?>
+                    <td><a href="index.php?action=displaySnowsDetails&id=<?= $snow['id'] ?>&img=<?= $snowtype['photo']?>" class="link">Louer</a></td>
+                    <?php }?>
                 </tr>
+
             <?php } ?>
         </tbody>
     </table>

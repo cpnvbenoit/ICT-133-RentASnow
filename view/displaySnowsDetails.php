@@ -7,11 +7,13 @@
  */
 
 ob_start();
-$title = "RentASnow - Snows";
-$compteur=0;
+$snow_code=$snow['code'];
+$title = "RentASnow - Snows - $snow_code";
+
 ?>
+    <br><br><br><br><br><br><br>
 <div class="center">
-    <?php echo "<img src=\"view/images/Snows/". $snow['photo']."\" style=\"width: 350px\" alt=\"\">";?>
+    <?php echo "<img src=\"view/images/Snows/". $img."\" style=\"width: 350px\" alt=\"\">";?>
     <h2>Code : <?= $snow['code']?></h2>
     <h2>Longueur : <?= $snow['length']?></h2>
     <h2>Etat : <?= $snow['state']?></h2>

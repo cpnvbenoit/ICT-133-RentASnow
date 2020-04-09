@@ -34,23 +34,6 @@ function getUsers()
         return null;
     }
 }//get Users from the snows Database
-function getSnows()
-{
-    try {
-        $dbh = getPDO();
-        $query = 'SELECT * FROM snows 
-                  INNER join snowtypes
-                  on snows.snowtype_id = snowtypes.id';
-        $statement = $dbh->prepare($query);//prepare query
-        $statement->execute();//execute query
-        $queryResult = $statement->fetchAll();//prepare result for client
-        $dbh = null;
-        return $queryResult;
-    } catch (PDOException $e) {
-        print "Error!: " . $e->getMessage() . "<br/>";
-        return null;
-    }
-}//get Snows with snowstypes
 function getSnow($id)
 {
     try {
@@ -66,7 +49,87 @@ function getSnow($id)
         print "Error!: " . $e->getMessage() . "<br/>";
         return null;
     }
-}//get Snows with snowstypes
+}//get Snows
+function getRent($id)
+{
+    try {
+        $dbh = getPDO();
+        $query = 'SELECT * FROM rents 
+                  WHERE id=:id';
+        $statement = $dbh->prepare($query);//prepare query
+        $statement->execute(['id'=>$id]);//execute query
+        $queryResult = $statement->fetch();//prepare result for client
+        $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}//get one rent by id
+function getUserRents($userID)
+{
+    try {
+        $dbh = getPDO();
+        $query = 'SELECT * FROM rents 
+                  left join rentsdetails
+                  on rents.id=rentsdetails.rent_id
+                  WHERE user_id=:user_id';
+        $statement = $dbh->prepare($query);//prepare query
+        $statement->execute(['user_id'=>$userID]);//execute query
+        $queryResult = $statement->fetchAll(PDO::FETCH_ASSOC);//prepare result for client
+        $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}//get all rents of a specific user by id
+function getRents()
+{
+    try {
+        $dbh = getPDO();
+        $query = 'SELECT * FROM rents ;';
+        $statement = $dbh->prepare($query);//prepare query
+        $statement->execute();//execute query
+        $queryResult = $statement->fetchALL();//prepare result for client
+        $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}//get all rents
+function getRentdetails($id)
+{
+    try {
+        $dbh = getPDO();
+        $query = 'SELECT * FROM rentsdetails 
+                  WHERE id=:id';
+        $statement = $dbh->prepare($query);//prepare query
+        $statement->execute(['id'=>$id]);//execute query
+        $queryResult = $statement->fetch();//prepare result for client
+        $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}//get one rentsdetails by id
+function getRentsdetails()
+{
+    try {
+        $dbh = getPDO();
+        $query = 'SELECT * FROM rentsdetails ;';
+        $statement = $dbh->prepare($query);//prepare query
+        $statement->execute();//execute query
+        $queryResult = $statement->fetchALL();//prepare result for client
+        $dbh = null;
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}//get all rentsdetails
 function getSnowsType($id)
 {
     try {

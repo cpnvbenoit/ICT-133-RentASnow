@@ -69,6 +69,8 @@
                             <td width="15px"></td>
                             <td class="nav-btn"><a href="index.php?action=displaySnows">Snows</a></td>
                             <td width="20px"></td>
+                            <td class="nav-btn"><a href="index.php?action=displayMyRent">My Rents</a></td>
+                            <td width="20px"></td>
 
                             <?php
                             if (isset($_SESSION['username'])) {

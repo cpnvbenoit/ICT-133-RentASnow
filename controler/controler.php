@@ -15,6 +15,10 @@ function home()
     $news = getNews();
     require_once 'view/home.php';
 }
+function displayMyRent(){
+    $rents=getUserRents($_SESSION['user_id']);
+    require_once 'view/displayRents.php';
+}
 function displaySnows()
 {
     $snowstypes = getSnowstypes();
@@ -54,6 +58,7 @@ function tryLogin()
         if (($username==$user['email'])&&(password_verify($password,$user['password']))){
 
             $_SESSION['username']=$username;
+            $_SESSION['user_id']=$user['id'];
         }
     }
     if (isset($_SESSION['username'])==false){
@@ -66,8 +71,9 @@ function tryLogin()
 
 
 }
-function displaySnowsDetails($id){
+function displaySnowsDetails($id,$snowtypeimg){
     $snow = getSnow($id);
+    $img=$snowtypeimg;
     require_once 'view/displaySnowsDetails.php';
 }
 function modifyfile()

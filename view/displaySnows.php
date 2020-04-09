@@ -9,18 +9,6 @@
 ob_start();
 $title = "RentASnow - Snows";
 ?>
-
-<!--
-   {
-	"id" : "1".
-    "modele": "B101",
-    "marque": "Burton",
-    "bigimage": "B101.jpg",
-    "smallimage": "B101_small.jpg",
-    "dateretour": "",
-    "disponible": true
-  },
- -->
 <br><br><br><br><br><br><br>
 <h1>Nos Snowboards :</h1>
 <?php foreach ($snowstypes as $snowstype) { ?>
